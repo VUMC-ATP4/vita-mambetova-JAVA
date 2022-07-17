@@ -1,17 +1,32 @@
 package classroomFive.encapsulation;
 
- public class Bird {
-     public String name;
+public class Bird {
+    private String colour;
+    private String name = "Pollija";
 
-     public void printText (){
-         System.out.println("Printeju putnu");
-         System.out.println("Si ir publiska metode");
-     }
+    public void setKrasa(String krasa){
+        this.colour = krasa;
+    }
 
-     private void ptintTextSpecial (){
-         System.out.println("Si ir privata metode");
-     }
-     void defaultMethodExample (){
-         System.out.println("Si ir default metode");
-     }
+    public String getKrasa(){
+        return colour;
+    }
+
+
+    //varam piekļūt no citām klasēm
+    public void printText(){
+        System.out.println("Šī ir publiska metode");
+        System.out.println("Printēju putnu");
+        printTextSpecial();
+    }
+    //varam piekļūt tikai no šīs klases
+    private void printTextSpecial(){
+        System.out.println("Šī ir privāta metode");
+    }
+
+    //varam piekļūt pakotnes ietvaros
+    void defaultMethodExample(){
+        System.out.println("Šī ir default metode");
+    }
+
 }
